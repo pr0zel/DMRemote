@@ -1,0 +1,43 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    
+    
+    <style name="Animation.Activity.Test" parent="@android:style/Animation.Activity">  
+    	<item name="android:activityOpenEnterAnimation">@anim/push_left_in</item>  
+    	<item name="android:activityOpenExitAnimation">@anim/push_left_out</item>  
+    	
+	</style>       
+    
+    <style name="main_tab_bottom">
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:button">@null</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+    
+    <style name="AnimationPreview">
+        <item name="android:windowEnterAnimation">@anim/popwin_scale_in</item>
+        <item name="android:windowExitAnimation">@anim/popwin_scale_out</item>
+    </style>
+
+</resources>

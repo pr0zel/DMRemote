@@ -1,0 +1,14 @@
+flurry 统计定义：
+http://blog.csdn.net/lilybaobei/article/details/7197081
+
+另外Flurry还可以记录你的一些事件信息。使用的函数如下：
+logEvent (String eventId)
+logEvent (String eventId, Map< String, String > parameters)
+logEvent (String eventId, boolean timed)
+
+eventId:
+1:切换频道，parameters为切换到频道的id和频道名
+2:滑动界面
+3:显示输入ip界面
+4:显示关于界面
+5:退出程序  1为连续点返回退出，2为在菜单中点退出

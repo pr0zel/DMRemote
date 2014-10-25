@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DM Remote</string>
+    <string name="action_settings">Einstellung</string>
+    <string name="app_name_show">DM Remote</string>
+    <string name="chn_disp_title">Kanalliste</string>
+    <string name="crt_chn_title">Aktuellen Kanal</string>
+    
+    
+    <string name="exit_toast_tips">Drücken Sie erneut die Anwendung zu verlassen</string>
+    <string name="connect_wifi_toast">Bitte verbinden Sie Wifi-Netzwerk</string>
+    
+    <string name="scanip_wait">Scannen, bitte warten.</string>
+    <string name="scanip_no_found_ip">IP-Adresse wird nicht gefunden, bitte manuell eingeben.</string>
+    <string name="scanip_found_ip_connect">Festgestellt, dass DM-Maschine, bereit, zu verbinden.</string>
+    
+    <string name="btn_ok_text">Bestätigen</string>
+    <string name="btn_cancel_text">Streichen</string>
+    <string name="btn_scanip_text">Scan</string>
+    
+    <string name="alert_win_enter_ip_title">Geben Sie die IP-Adresse</string>
+    <string name="alert_win_enter_ip_msg">Bitte geben Sie die IP-Adresse des DM-Maschine. \n[IP: Port-Nummer (standardmäßig Port 80)]</string>
+    <string name="alert_win_enter_ip_null_msg">IP-Adresse darf nicht leer sein.</string>
+    <string name="alert_win_enter_ip_hint">IP-Adressen...</string>
+    
+    
+    <string name="opt_menu_setip">Set IP</string>
+    <string name="opt_menu_about">Über das Programm</string>
+    <string name="opt_menu_feedback">Rückkopplung</string>
+    <string name="opt_munu_exit">beenden Sie das Programm</string>
+    
+    
+    <string name="fetching_data">Daten gelesen</string>
+    <string name="parsing">Auflösen von Daten</string>
+    <string name="services">Service</string>
+    
+    <string name="crt_chn_pag_per_eventdescription">Programminformationen:\n</string>
+    <string name="crt_chn_pag_no_eventdescription">Keine Programminformationen.</string>
+    <string name="crt_chn_pag_connect_error">Kann nicht mit dem Server verbinden.</string>
+    
+    <string name="chn_lst_active_chn_toase">Schaltkanäle </string>
+    
+    <string name="chn_list_crt_prog">Aktuelle:</string>
+    <string name="chn_list_crt_prog_time">Minuten</string>
+    
+    
+    <string name="about_win_show_text">
+	<![CDATA[
+	<div><big>&nbsp;DMRemote&nbsp;</big></div>
+	<div>&nbsp;&nbsp;DmRemote ist eine für die DM(DM500 / DM800 / DM800SE) Fernbedienung Software-Plattform, ermöglicht es Ihnen, um den Kanal zu wechseln, um die DM-Funktion auf dem Handy zu erreichen, und es kann automatisch die Screenshots gerade aktive Kanal anzuzeigen.</div>
+	<div>&nbsp;&nbsp;Ich hoffe, dass dieses Programm können Sie mehr prägnante Aktion für Taiwan, das Telefon wie eine Fernbedienung zu bringen, aber ich hoffe, dass wir Vorschläge für das Programm zur Verfügung stellen, damit das Programm leichter und komfortabler zu bekommen.</div>
+	<div>&nbsp;&nbsp;Sie können die Empfehlungen zurück zu mir per <a href="mailto:pr0zel@gmail.com">E-Mail</a> stellen, danke.</div>
+	<div>Code by Pr0Zel</div>
+	]]>
+	</string>
+    
+    <string-array name="servicelist">
+		<item>喜爱频道(TV)</item>
+		<item>服务商(TV)</item>
+		<item>所有(TV)</item>
+		<item>喜爱频道(广播)</item>
+		<item>服务商(广播)</item>
+		<item>所有(广播)</item>
+	</string-array>
+
+</resources>

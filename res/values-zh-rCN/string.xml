@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">梦幻遥控器</string>
+    <string name="action_settings">设置</string>
+    <string name="app_name_show">梦幻遥控器</string>
+    <string name="chn_disp_title">频道列表</string>
+    <string name="crt_chn_title">当前频道</string>
+    
+    
+    <string name="exit_toast_tips">再按一次退出应用</string>
+    <string name="connect_wifi_toast">请连接Wifi网络</string>
+    
+    <string name="scanip_wait">扫描中，请稍等。</string>
+    <string name="scanip_no_found_ip">未发现IP地址，请手动输入。</string>
+    <string name="scanip_found_ip_connect">发现DM机器，准备连接。</string>
+    
+    <string name="btn_ok_text">确认</string>
+    <string name="btn_cancel_text">取消</string>
+    <string name="btn_scanip_text">扫描</string>
+    
+    <string name="alert_win_enter_ip_title">输入IP地址</string>
+    <string name="alert_win_enter_ip_msg">请输入DM机的IP地址。\n[IP:端口号(默认端口80)]</string>
+    <string name="alert_win_enter_ip_null_msg">IP地址不能为空。</string>
+    <string name="alert_win_enter_ip_hint">IP地址...</string>
+    
+    
+    <string name="opt_menu_setip">设置IP</string>
+    <string name="opt_menu_about">关于</string>
+    <string name="opt_menu_feedback">反馈</string>
+    <string name="opt_munu_exit">退出程序</string>
+    
+    
+    <string name="fetching_data">正在读取数据</string>
+    <string name="parsing">正在解释数据</string>
+    <string name="services">服务</string>
+    
+    <string name="crt_chn_pag_per_eventdescription">节目信息：\n</string>
+    <string name="crt_chn_pag_no_eventdescription">无节目信息。</string>
+    <string name="crt_chn_pag_connect_error">连接服务器错误。</string>
+    
+    <string name="chn_lst_active_chn_toase">切换频道到：</string>
+    
+    <string name="chn_list_crt_prog">当前：</string>
+    <string name="chn_list_crt_prog_time">分钟</string>
+    
+    
+    <string name="about_win_show_text">
+	<![CDATA[
+	<div><big>&nbsp;梦幻遥控器&nbsp;</big></div>
+	<div>&nbsp;&nbsp;梦幻遥控器是一个用于DM(DM500/DM800/DM800se)平台上的遥控器软件，它让你在手机上实现DM的换台功能，并且它能自动显示当前播放频道的画面截图。</div>
+	<div>&nbsp;&nbsp;希望这个程序能带给大家更简洁的换台动作，使手机更像一个遥控器，更希望大家能提供该程序的建议，使这个程序能用得更加顺手，更舒服。</div>
+	<div>&nbsp;&nbsp;你可以把建议通过<a href="mailto:pr0zel@gmail.com">电子邮件</a>反馈给我，非常感谢。</div>
+	<div>Code by Pr0Zel</div>
+	]]>
+	</string>
+    
+    <string-array name="servicelist">
+		<item>喜爱频道(TV)</item>
+		<item>服务商(TV)</item>
+		<item>所有(TV)</item>
+		<item>喜爱频道(广播)</item>
+		<item>服务商(广播)</item>
+		<item>所有(广播)</item>
+	</string-array>
+
+</resources>

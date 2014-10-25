@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <TextView android:id="@+id/inputIP_IPAddrview_2"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="20dip"
+		android:layout_marginRight="20dip" android:text="@string/alert_win_enter_ip_msg"
+		android:textAppearance="?android:attr/textAppearanceMedium" android:layout_width="fill_parent"/>
+
+	<EditText android:id="@+id/inputIPTextView_2"
+		android:layout_height="wrap_content"
+		android:layout_width="fill_parent" android:layout_marginLeft="20dip"
+		android:layout_marginRight="20dip" android:capitalize="none"
+		android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+	<LinearLayout android:id="@+id/LinearLayout01_2" 
+    	android:layout_height="wrap_content"
+    	android:layout_width="fill_parent"
+    	android:scaleY="100"
+    	android:gravity="center">
+    	<Button android:layout_width="wrap_content" 
+        	android:layout_height="wrap_content"
+        	android:id="@+id/inputIP_BtnOK_2"
+        	android:layout_weight="100"
+        	android:text="@string/btn_ok_text">
+    	</Button>
+    	<Button android:layout_width="wrap_content" 
+        	android:layout_height="wrap_content"
+        	android:id="@+id/inputIP_BtnScanIP_2"
+        	android:layout_weight="100"
+        	android:text="@string/btn_scanip_text">
+    	</Button>
+    </LinearLayout>
+
+</RelativeLayout>
