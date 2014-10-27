@@ -249,6 +249,7 @@ public class MainTabActivity extends Activity {
 		mTabHost = (TabHost) findViewById(R.id.tabhost1);
 		mTabHost.setup();
 		mTabHost.setup(m_actManager);
+		mTabHost.clearAllTabs(); // 清除以前的tab
 		
 		RelativeLayout tabIndicator1 = (RelativeLayout) LayoutInflater.from(m_thisContext).inflate(R.layout.tabwidget, null);
 		TextView tvTab1 = (TextView) tabIndicator1.findViewById(R.id.tv_title);
@@ -654,9 +655,9 @@ public class MainTabActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		menu.add(Menu.NONE, 1, 1, getResources().getString(R.string.opt_menu_setip));
-		menu.add(Menu.NONE, 2, 4, getResources().getString(R.string.opt_munu_exit));
+		menu.add(Menu.NONE, 2, 3, getResources().getString(R.string.opt_munu_exit));
 		menu.add(Menu.NONE, 3, 2, getResources().getString(R.string.opt_menu_about));
-		menu.add(Menu.NONE, 4, 3, getResources().getString(R.string.opt_menu_feedback));
+		//menu.add(Menu.NONE, 4, 3, getResources().getString(R.string.opt_menu_feedback));
 		
 		return super.onCreateOptionsMenu(menu);
 	}
