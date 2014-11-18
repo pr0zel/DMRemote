@@ -505,7 +505,7 @@ public class MainTabActivity extends Activity {
 				Map<String, String> map = new HashMap<String, String>();
 				map.put("ip", m_strIP);
 				map.put("port", String.valueOf(m_nPort));
-				FlurryAgent.logEvent("EnterIP_search", map);
+				FlurryAgent.logEvent("ScanIP_Found", map);
 				
 				Intent i = getBaseContext().getPackageManager()
 						.getLaunchIntentForPackage(getBaseContext().getPackageName());
