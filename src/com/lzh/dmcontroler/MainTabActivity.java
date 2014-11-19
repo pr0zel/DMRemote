@@ -487,6 +487,9 @@ public class MainTabActivity extends Activity {
 						getResources().getString(R.string.scanip_no_found_ip), 
 						3000).show();
 				FlurryAgent.logEvent("ScanIP_notFound");
+				
+				// 准备开启 扫描IP扫不到的情况下发邮件 只发一次。
+				//IPNotFoundSendFeedBack();
 				break;
 				
 			case 1:
@@ -712,6 +715,43 @@ public class MainTabActivity extends Activity {
 			break;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+	
+	private void IPNotFoundSendFeedBack() {
+		
+		PackageInfo pkg = null;
+		String strSubject;
+		String strText;
+		
+		SharedPreferences shareReadData = getSharedPreferences("data", 0);
+		
+		if (1 == shareReadData.getInt(IntentExtDataDef.IPNotFoundSendMail, 0)) {
+			return;
+		}
+		
+		SharedPreferences.Editor shareWriteDataEditor = getSharedPreferences("data", 0).edit();
+		shareWriteDataEditor.putInt(IntentExtDataDef.IPNotFoundSendMail, 1);
+		shareWriteDataEditor.commit();
+		
+		Intent data = new Intent(Intent.ACTION_SENDTO); 
+		data.setData(Uri.parse("mailto:dmremotea@gmail.com"));
+		if (null == pkg)
+			strSubject = "DmRemote Ip not found feedback";
+		else
+			strSubject = "DmRemote v" + pkg.versionName + "ip not found feedback";
+		
+		strText = "Product Model: " + android.os.Build.MODEL + ", " + android.os.Build.VERSION.SDK
+				+ ", " + android.os.Build.VERSION.RELEASE + ", " + Locale.getDefault().getLanguage() + "-"
+				+ Locale.getDefault().getCountry() + "\n";
+		DisplayMetrics dm = new DisplayMetrics();
+		WindowManager windowMgr = (WindowManager)getApplicationContext().getSystemService(Context.WINDOW_SERVICE);
+		windowMgr.getDefaultDisplay().getMetrics(dm);
+		
+		strText += "Resolution: " + dm.widthPixels + " * " + dm.heightPixels + "\n\n";
+		
+		data.putExtra(Intent.EXTRA_SUBJECT, strSubject);
+		data.putExtra(Intent.EXTRA_TEXT, strText);
+		startActivity(data);
 	}
 
 	@Override

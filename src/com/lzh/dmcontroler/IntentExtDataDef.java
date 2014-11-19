@@ -6,5 +6,6 @@ public class IntentExtDataDef {
 	public static final String Port = "Port";
 	public static final String ScreenHight = "ScreenHight";
 	public static final String ScreenWidth = "ScrenWidth";
+	public static final String IPNotFoundSendMail = "ipNotFoundSendMail";
 
 }
