@@ -12,6 +12,7 @@
     <string name="connect_wifi_toast">Anslut Wifi nätverk.</string>
     
     <string name="scanip_wait">Scanning, var god vänta.</string>
+    <string name="scanip_popupwin_title">Scanning</string>
     <string name="scanip_no_found_ip">DM maskin hittas inte, Vänligen ange adressen manuellt.</string>
     <string name="scanip_found_ip_connect">Fann att DM maskin, redo att ansluta.</string>
     

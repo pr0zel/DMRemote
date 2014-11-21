@@ -304,7 +304,8 @@ public class IpScanTask extends AsyncTask<Integer, Integer, Integer> {
 	{
 		mProgressDialog = new ProgressDialog(m_Context);
 		mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-		mProgressDialog.setTitle("DM Scanning ...");
+		//scanip_popupwin_title
+		mProgressDialog.setTitle(m_Context.getResources().getString(R.string.scanip_popupwin_title));
 		mProgressDialog.setIcon(R.drawable.ic_launcher);
 		mProgressDialog.setProgress(254);
 		mProgressDialog.setMax(254);

@@ -201,6 +201,7 @@ public class MainTabActivity extends Activity {
 				}
 				else {
 					// no wifi
+					FlurryAgent.logEvent("ScanIP_NoWifi");
 					Toast.makeText(getApplicationContext(), 
 							getResources().getString(R.string.connect_wifi_toast), 3000).show();
 				}

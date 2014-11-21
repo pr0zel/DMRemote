@@ -12,6 +12,7 @@
     <string name="connect_wifi_toast">Connect the Wifi network.</string>
     
     <string name="scanip_wait">Scanning,please wait.</string>
+    <string name="scanip_popupwin_title">Scanning ...</string>
     <string name="scanip_no_found_ip">No any IP found, please input IP manually.</string>
     <string name="scanip_found_ip_connect">IP has found,try to connent.</string>
     

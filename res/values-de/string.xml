@@ -12,6 +12,7 @@
     <string name="connect_wifi_toast">Bitte verbinden Sie Wifi-Netzwerk</string>
     
     <string name="scanip_wait">Scannen, bitte warten.</string>
+    <string name="scanip_popupwin_title">Scanning ...</string>
     <string name="scanip_no_found_ip">IP-Adresse wird nicht gefunden, bitte manuell eingeben.</string>
     <string name="scanip_found_ip_connect">Festgestellt, dass DM-Maschine, bereit, zu verbinden.</string>
     

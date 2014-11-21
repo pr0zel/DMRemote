@@ -12,6 +12,7 @@
     <string name="connect_wifi_toast">请连接Wifi网络</string>
     
     <string name="scanip_wait">扫描中，请稍等。</string>
+    <string name="scanip_popupwin_title">扫描中</string>
     <string name="scanip_no_found_ip">未发现IP地址，请手动输入。</string>
     <string name="scanip_found_ip_connect">发现DM机器，准备连接。</string>
     
