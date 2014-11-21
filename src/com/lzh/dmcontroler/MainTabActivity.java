@@ -191,10 +191,12 @@ public class MainTabActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				
+				FlurryAgent.logEvent("ScanIP_Click");
 				if (true == isConnectedWifi()) {
 					
 					m_popUpWindow.dismiss();
 					
+					FlurryAgent.logEvent("ScanIP_Start");
 					ScanIPFunc(MainTabActivity.this);
 				}
 				else {
