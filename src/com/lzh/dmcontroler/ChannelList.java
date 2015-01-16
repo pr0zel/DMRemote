@@ -269,7 +269,8 @@ public class ChannelList extends BaseAdapter {
 		
 		String[] strRefCount = m_dmRemoteSql.getChnRefCountInDb();
 		if (null != strRefCount)
-			if (0 != strRefCount.length) {
+			//if (0 != strRefCount.length) {
+			if (3 <= strRefCount.length) {
 				//
 				for (Item map:processItem) {
 					bTag = false;
@@ -305,6 +306,8 @@ public class ChannelList extends BaseAdapter {
 			//
 			itemRet.addAll(processItem);
 		}
+		if (0 == itemRet.size())
+			itemRet.addAll(processItem);
 		
 		return itemRet;
 	}
