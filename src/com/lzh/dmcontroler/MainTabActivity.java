@@ -133,6 +133,12 @@ public class MainTabActivity extends Activity {
 		//ss.initDB();
 		//ss.AddReftoDB("高清翡翠台", "1:EEEEEE");
 		//this.openOrCreateDatabase("test_db.db", Context.MODE_PRIVATE, null);
+		
+		//Sensors sen = new Sensors(getApplicationContext());
+		//sen.InitSensor();
+		
+		
+		
 		setContentView(R.layout.viewpager);
 		
 		m_thisContext = MainTabActivity.this;
