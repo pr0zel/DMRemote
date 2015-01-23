@@ -168,13 +168,20 @@ public class DmRemoteSql {
 		return nChnCount;
 	}
 	
-	public String[] getChnRefCountInDb() {
+	public String[] getChnRefCountInDb(int nSort) {
 		String[] strRet = null;
 		String strSQL = "";
 		int nColumnNum;
 		int nColumnCount;
 		m_db = SQLiteDatabase.openDatabase(strDBName, null, SQLiteDatabase.OPEN_READONLY);
-		strSQL = "select ChnRef from chnsum order by sumNum DESC";
+		if (1 == nSort)
+			strSQL = "select ChnRef from chnsum order by sumNum DESC";
+		else if (2 == nSort)
+			strSQL = "select ChnRef from chnsum order by sumNum";
+		else
+			strSQL = "select ChnRef from chnsum";
+		
+		
 		Cursor c = m_db.rawQuery(strSQL, null);
 		c.moveToFirst();
 		nColumnNum = c.getColumnCount();

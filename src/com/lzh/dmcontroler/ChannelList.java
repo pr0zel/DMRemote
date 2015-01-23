@@ -267,7 +267,9 @@ public class ChannelList extends BaseAdapter {
 		List<Item> itemNotInDb = null;
 		Boolean bTag = false;
 		
-		String[] strRefCount = m_dmRemoteSql.getChnRefCountInDb();
+		// 1是倒序列  2是顺序排列  0是不排列
+		String[] strRefCount = m_dmRemoteSql.getChnRefCountInDb(1);
+		
 		if (null != strRefCount)
 			//if (0 != strRefCount.length) {
 			if (3 <= strRefCount.length) {
