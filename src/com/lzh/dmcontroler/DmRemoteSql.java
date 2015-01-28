@@ -17,12 +17,12 @@ import android.util.Log;
 public class DmRemoteSql {
 	SQLiteDatabase m_db = null;
 	//String strDBName = "/data/data/com.lzh.dmremote/databases/DMRemoteDB.db";
-	String strDBName;
+	String m_strDBName;
 	
-	public DmRemoteSql(Context cOntex) {
+	public DmRemoteSql(Context contex) {
 		//m_db = SQLiteDatabase.openOrCreateDatabase("test.db", null);
 		
-		strDBName = "/data/data/" + cOntex.getPackageName() + "/DMRemoteDB.db";
+		m_strDBName = "/data/data/" + contex.getPackageName() + "/DMRemoteDB.db";
 		
 		//Log.d("Tag", strDBName);
 		initDB();
@@ -30,7 +30,7 @@ public class DmRemoteSql {
 	
 	private Boolean openDB() {
 		try {
-			m_db = SQLiteDatabase.openOrCreateDatabase(strDBName, null);
+			m_db = SQLiteDatabase.openOrCreateDatabase(m_strDBName, null);
 		}
 		catch(Exception e) {
 			return false;
@@ -93,7 +93,7 @@ public class DmRemoteSql {
 	
 	public void AddReftoDB(String strChnName, String strChnRef) {
 		int nChnTotal = 0;
-		m_db = SQLiteDatabase.openDatabase(strDBName, null, SQLiteDatabase.OPEN_READWRITE);
+		m_db = SQLiteDatabase.openDatabase(m_strDBName, null, SQLiteDatabase.OPEN_READWRITE);
 		if (null == m_db)
 			return;
 		
@@ -137,7 +137,7 @@ public class DmRemoteSql {
 	public int getChnCountByName(String strName) {
 		int nChnCount = 0;
 		String strSQL = "";
-		m_db = SQLiteDatabase.openDatabase(strDBName, null, SQLiteDatabase.OPEN_READONLY);
+		m_db = SQLiteDatabase.openDatabase(m_strDBName, null, SQLiteDatabase.OPEN_READONLY);
 		
 		strSQL = "select * from chnsum where ChnName = \"" + strName + "\"";
 		Cursor c = m_db.rawQuery(strSQL, null);
@@ -154,7 +154,7 @@ public class DmRemoteSql {
 	public int getChnCountByRef(String strChnRef) {
 		int nChnCount = 0;
 		String strSQL = "";
-		m_db = SQLiteDatabase.openDatabase(strDBName, null, SQLiteDatabase.OPEN_READONLY);
+		m_db = SQLiteDatabase.openDatabase(m_strDBName, null, SQLiteDatabase.OPEN_READONLY);
 		
 		strSQL = "select * from chnsum where ChnRef = \"" + strChnRef + "\"";
 		Cursor c = m_db.rawQuery(strSQL, null);
@@ -173,7 +173,7 @@ public class DmRemoteSql {
 		String strSQL = "";
 		int nColumnNum;
 		int nColumnCount;
-		m_db = SQLiteDatabase.openDatabase(strDBName, null, SQLiteDatabase.OPEN_READONLY);
+		m_db = SQLiteDatabase.openDatabase(m_strDBName, null, SQLiteDatabase.OPEN_READONLY);
 		if (1 == nSort)
 			strSQL = "select ChnRef from chnsum order by sumNum DESC";
 		else if (2 == nSort)

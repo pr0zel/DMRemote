@@ -331,9 +331,14 @@ public class ChannelList extends BaseAdapter {
 			if ("None".equals(map.getString(Event.KEY_EVENT_DURATION))) {
 				object.nProgTime = 0;
 			}
-			else
-				object.nProgTime = Integer.valueOf(map.getString(Event.KEY_EVENT_DURATION), 10) / 60;
-			
+			else {
+				try {
+					object.nProgTime = Integer.valueOf(map.getString(Event.KEY_EVENT_DURATION), 10) / 60;
+				} catch (NumberFormatException e) {
+					object.nProgTime = 0;
+				}
+				
+			}
 			item.add(object);
 		}
 		
@@ -370,7 +375,12 @@ public class ChannelList extends BaseAdapter {
 					object.nProgTime = 0;
 				}else {
 					//
-					object.nProgTime = Integer.valueOf(map.getString(Event.KEY_EVENT_DURATION), 10) / 60;
+					try {
+						object.nProgTime = Integer.valueOf(map.getString(Event.KEY_EVENT_DURATION), 10) / 60;
+					} catch(NumberFormatException e) {
+						object.nProgTime = 0;
+					}
+					
 				}
 				
 			//object.strNextProgName = map.getString(Event.KEY_NEXT_EVENT_TITLE);
