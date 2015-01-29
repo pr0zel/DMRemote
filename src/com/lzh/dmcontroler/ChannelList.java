@@ -24,6 +24,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.location.GpsStatus.NmeaListener;
 import android.os.AsyncTask;
+import android.os.Handler;
 import android.text.style.URLSpan;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,6 +35,9 @@ import android.widget.Toast;
 
 public class ChannelList extends BaseAdapter {
 	
+	// channel list ref time is 1 minunt
+	private static int m_nChnListRefTime = 60;
+		
 	public static class Item{
 		public String strChannelName;  //频道名
 		public String strProviderName; //提供者名
@@ -65,12 +69,14 @@ public class ChannelList extends BaseAdapter {
 	
 	private DmRemoteSql m_dmRemoteSql;
 	private String[] m_strChnRef;
-	private Boolean m_bSortChnnel = false;
+	private Boolean m_bSortChnnel = true;
 	
 	public ChannelList(Context context) {
 		mContext = context;
 		m_dmRemoteSql = new DmRemoteSql(mContext);
 		//m_strChnRef = m_dmRemoteSql.getChnRefCountInDb();
+		
+		m_hRefChnList.postDelayed(m_runableRefChnList, 1000 * m_nChnListRefTime);
 	}
 
 	@Override
@@ -91,6 +97,15 @@ public class ChannelList extends BaseAdapter {
 		// TODO Auto-generated method stub
 		return position;
 	}
+	
+	Handler m_hRefChnList = new Handler();
+	Runnable m_runableRefChnList = new Runnable(){
+		@Override
+		public void run() {
+			refChnList();
+			m_hRefChnList.postDelayed(this, 1000 * m_nChnListRefTime);
+		}
+	};
 	
 	public void SetScreen(int nWidth, int nHight) {
 		m_ScreenHight = nHight;
@@ -267,6 +282,13 @@ public class ChannelList extends BaseAdapter {
 		List<Item> itemNotInDb = null;
 		Boolean bTag = false;
 		
+		itemRet = new ArrayList<Item>();
+		itemRet.clear();
+		itemInDb = new ArrayList<Item>();
+		itemInDb.clear();
+		itemNotInDb = new ArrayList<Item>();
+		itemNotInDb.clear();
+		
 		// 1是倒序列  2是顺序排列  0是不排列
 		String[] strRefCount = m_dmRemoteSql.getChnRefCountInDb(1);
 		
@@ -304,10 +326,9 @@ public class ChannelList extends BaseAdapter {
 				
 			}
 		
-		if (null == itemRet) {
-			//
+		if (null == itemRet)
 			itemRet.addAll(processItem);
-		}
+		
 		if (0 == itemRet.size())
 			itemRet.addAll(processItem);
 		
@@ -343,7 +364,7 @@ public class ChannelList extends BaseAdapter {
 		}
 		
 		if (true == bSort) {
-			processItem = sortChnItems(item);
+			processItem.addAll(sortChnItems(item));
 		}
 		else {
 			processItem.addAll(item);
@@ -389,7 +410,7 @@ public class ChannelList extends BaseAdapter {
 		}
 		
 		if (true == bSort) {
-			processItem = sortChnItems(item);
+			processItem.addAll(sortChnItems(item));
 		}
 		else {
 			processItem.addAll(item);

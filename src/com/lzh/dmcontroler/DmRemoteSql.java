@@ -97,10 +97,11 @@ public class DmRemoteSql {
 		if (null == m_db)
 			return;
 		
-		DateTime dt = new DateTime();
+		//DateTime dt = new DateTime();
 		
 		String strExecSQL1 = "";
 		ContentValues values = new ContentValues();
+		ContentValues values2 = new ContentValues();
 		values.put("ChnName", strChnName);
 		values.put("ChnRef", strChnRef);
 		
@@ -108,28 +109,25 @@ public class DmRemoteSql {
 		
 		strExecSQL1 = "select * from chnsum where ChnRef = \"" + strChnRef +"\"";
 		Cursor c = m_db.rawQuery(strExecSQL1, null);
-		c.moveToFirst();
-		nChnTotal = c.getColumnIndex("sumNum");
+		c.moveToFirst();		
 		
-		if (-1 == nChnTotal) {
+		if (-1 == nChnTotal || c.isAfterLast()) {
 			// not exist
-			values.clear();
-			values.put("ChnName", strChnName);
-			values.put("ChnRef", strChnRef);
-			values.put("sumNum", 1);
-			m_db.insert("chnsum", "_id", values);
-		}
-		else {
-			// sumNum ++
-			
-			nChnTotal ++;
-			values.clear();
-			values.put("sumNum", nChnTotal);
-			m_db.update("chnsum", values, "ChnRef=?", new String[]{strChnRef});
-			
+			values2.clear();
+			values2.put("ChnName", strChnName);
+			values2.put("ChnRef", strChnRef);
+			values2.put("sumNum", 1);
+			m_db.insert("chnsum", "_id", values2);
+			m_db.close();
+			return;
 		}
 		
-		
+		nChnTotal = c.getInt(c.getColumnIndex("sumNum"));
+		nChnTotal ++;
+		//values2.clear();
+		values2.put("sumNum", nChnTotal);
+		String[] args = {String.valueOf(strChnRef)};
+		m_db.update("chnsum", values2, "ChnRef=?", args);	
 		m_db.close();
 		
 	}
@@ -169,7 +167,7 @@ public class DmRemoteSql {
 	}
 	
 	public String[] getChnRefCountInDb(int nSort) {
-		String[] strRet = null;
+		String[] strRet;
 		String strSQL = "";
 		int nColumnNum;
 		int nColumnCount;
@@ -184,13 +182,13 @@ public class DmRemoteSql {
 		
 		Cursor c = m_db.rawQuery(strSQL, null);
 		c.moveToFirst();
-		nColumnNum = c.getColumnCount();
+		nColumnNum = c.getCount();
 		
 		strRet = new String[nColumnNum];
 		
 		nColumnCount = 0;
 		while(!c.isAfterLast()) {
-			strRet[nColumnCount] = c.getColumnName(nColumnCount);
+			strRet[nColumnCount] = c.getString(0);
 			
 			c.moveToNext();
 			nColumnCount ++;
