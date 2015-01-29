@@ -76,7 +76,7 @@ public class ChannelList extends BaseAdapter {
 		m_dmRemoteSql = new DmRemoteSql(mContext);
 		//m_strChnRef = m_dmRemoteSql.getChnRefCountInDb();
 		
-		m_hRefChnList.postDelayed(m_runableRefChnList, 1000 * m_nChnListRefTime);
+		//m_hRefChnList.postDelayed(m_runableRefChnList, 1000 * m_nChnListRefTime);
 	}
 
 	@Override
@@ -144,6 +144,8 @@ public class ChannelList extends BaseAdapter {
 		params.add(new BasicNameValuePair("bRef", "1:7:1:0:0:0:0:0:0:0:"));
 		//(new GetServiceListTask()).execute(params);
 		(new getChnEpgNow()).execute(params);
+		
+		m_hRefChnList.postDelayed(m_runableRefChnList, 1000 * m_nChnListRefTime);
 		
 	}
 	
