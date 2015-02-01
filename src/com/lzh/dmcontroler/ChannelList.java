@@ -418,6 +418,10 @@ public class ChannelList extends BaseAdapter {
 			processItem.addAll(item);
 		}
 		
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("ChnNumber", String.format("%d", processItem.size()));
+		FlurryAgent.logEvent("ChnNumber", map);
+		
 		((BaseAdapter)this).notifyDataSetChanged();
 	}
 	
