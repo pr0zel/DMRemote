@@ -296,7 +296,7 @@ public class ChannelList extends BaseAdapter {
 		
 		if (null != strRefCount)
 			//if (0 != strRefCount.length) {
-			if (3 <= strRefCount.length) {
+			if (2 <= strRefCount.length) {
 				//
 				for (Item map:processItem) {
 					bTag = false;
