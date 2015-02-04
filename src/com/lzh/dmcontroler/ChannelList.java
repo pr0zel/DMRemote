@@ -37,6 +37,7 @@ public class ChannelList extends BaseAdapter {
 	
 	// channel list ref time is 1 minunt
 	private static int m_nChnListRefTime = 60;
+	private static Boolean m_bUploadChnNumberTig = false;
 		
 	public static class Item{
 		public String strChannelName;  //频道名
@@ -139,6 +140,7 @@ public class ChannelList extends BaseAdapter {
 		//ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
 		//params.add(new BasicNameValuePair("sRef", sss));
 		//(new GetServiceListTask()).execute(params);
+		m_bUploadChnNumberTig = true;
 		
 		ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
 		params.add(new BasicNameValuePair("bRef", "1:7:1:0:0:0:0:0:0:0:"));
@@ -179,10 +181,14 @@ public class ChannelList extends BaseAdapter {
 		params.add(new BasicNameValuePair("sRef", mItems.get(nCHNID).strChnRef));
 		(new ChnChannelTask()).execute(params);
 		
-		Map<String, String> map = new HashMap<String, String>();
-		map.put("ChnRef", ss);
-		map.put("ChnName", strChannelName);
-		FlurryAgent.logEvent("ChangeChannel", map);
+		if (true == m_bUploadChnNumberTig) {
+			Map<String, String> map = new HashMap<String, String>();
+			map.put("ChnRef", ss);
+			map.put("ChnName", strChannelName);
+			FlurryAgent.logEvent("ChangeChannel", map);
+			m_bUploadChnNumberTig = false;
+		}
+		
 		
 		m_dmRemoteSql.AddReftoDB(strChannelName, ss);
 		
