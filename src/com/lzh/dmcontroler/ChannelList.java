@@ -83,6 +83,9 @@ public class ChannelList extends BaseAdapter {
 	@Override
 	public int getCount() {
 		// TODO Auto-generated method stub
+		if (null == mItems)
+			return 0;
+		
 		return mItems.size();
 	}
 
