@@ -495,7 +495,10 @@ public class MainTabActivity extends Activity {
 				Toast.makeText(getApplicationContext(), 
 						getResources().getString(R.string.scanip_no_found_ip), 
 						3000).show();
-				FlurryAgent.logEvent("ScanIP_notFound");
+				Map<String, String> m_mapIPAddr = new HashMap<String, String>();
+				IpScanTask ipScan = new IpScanTask(getApplicationContext());
+				m_mapIPAddr.put("LocalIP", ipScan.getLocalIP());
+				FlurryAgent.logEvent("ScanIP_notFound", m_mapIPAddr);
 				
 				// 准备开启 扫描IP扫不到的情况下发邮件 只发一次。
 				//IPNotFoundSendFeedBack();

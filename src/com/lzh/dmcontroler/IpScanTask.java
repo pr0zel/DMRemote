@@ -253,6 +253,10 @@ public class IpScanTask extends AsyncTask<Integer, Integer, Integer> {
         }
 	}
 	
+	public String getLocalIP() {
+		return getLocAddress();
+	}
+	
 	private String getLocAddress() {
 		
 		String strIPAddr = "";

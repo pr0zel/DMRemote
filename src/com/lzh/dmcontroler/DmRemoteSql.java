@@ -109,7 +109,7 @@ public class DmRemoteSql {
 		
 		strExecSQL1 = "select * from chnsum where ChnRef = \"" + strChnRef +"\"";
 		Cursor c = m_db.rawQuery(strExecSQL1, null);
-		c.moveToFirst();		
+		c.moveToFirst();
 		
 		if (-1 == nChnTotal || c.isAfterLast()) {
 			// not exist

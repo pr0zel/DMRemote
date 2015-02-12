@@ -90,6 +90,8 @@ public class ChannelList extends BaseAdapter {
 	public Object getItem(int position) {
 		// TODO Auto-generated method stub
 		//return null;
+		if (null == mItems)
+			return null;
 		return mItems.get(position);
 	}
 
