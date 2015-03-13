@@ -3,54 +3,57 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#3c4f5f">
-
-    <TextView
-        android:id="@+id/textViewChnName"
-        android:background="#3c4f5f"
+    
+    <LinearLayout 
         android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:layout_x="0dp"
-        android:layout_y="2dp"
-        android:clickable="false"
-        android:gravity="center_vertical"
-        android:text=""
-        android:textSize="30dp"
+        android:layout_height="400dp"
+        android:orientation="vertical"
+        >
         
-        android:textColor="#bebebe"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        <TextView
+        	android:id="@+id/textViewChnName"
+        	android:background="#3c4f5f"
+        	android:layout_width="match_parent"
+        	android:layout_height="58dp"
+        	android:clickable="false"
+        	android:gravity="center_vertical"
+        	android:text="Playing Channel Name"
+        	android:textSize="30sp"
+        
+        	android:textColor="#bebebe"
+        	android:textAppearance="?android:attr/textAppearanceLarge"
+        	/>
 
-    <ImageView
-        android:id="@+id/imageViewSnapShot"
-        android:layout_width="match_parent"
-        android:layout_height="204dp"
-        android:layout_x="0dp"
-        android:layout_y="62dp"
-        android:background="#3c4f5f"
-        android:src="@drawable/gray" />
+    	<ImageView
+        	android:id="@+id/imageViewSnapShot"
+        	android:layout_width="match_parent"
+        	android:layout_height="204dp"
+        	android:background="#3c4f5f"
+        	android:src="@drawable/gray" />
 
-    <TextView
-        android:id="@+id/textViewCurPlaying"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_x="0dp"
-        android:layout_y="268dp"
-        android:background="#3c4f5f"
-        android:gravity="center_vertical"
-        android:text=""
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#bebebe"
-        android:textSize="23dp" />
+    	<TextView
+        	android:id="@+id/textViewCurPlaying"
+        	android:layout_width="match_parent"
+        	android:layout_height="56dp"
+        	android:background="#3c4f5f"
+        	android:gravity="center_vertical"
+        	android:text="Playing Name"
+        	android:textAppearance="?android:attr/textAppearanceMedium"
+        	android:textColor="#bebebe"
+        	android:textSize="23sp" />
 
-    <TextView
-        android:id="@+id/textViewCurEPG"
-        android:layout_width="match_parent"
-        android:layout_height="140dp"
-        android:layout_x="0dp"
-        android:layout_y="331dp"
-        android:background="#3c4f5f"
-        android:text=""
-        android:textColor="#bebebe"
-        android:textSize="20dp" />
+    	<TextView
+        	android:id="@+id/textViewCurEPG"
+        	android:layout_width="match_parent"
+        	android:layout_height="140dp"
+        	android:background="#3c4f5f"
+        	android:text="Channel EPG Information"
+        	android:textColor="#bebebe"
+        	android:textSize="20sp" />
+    
+    </LinearLayout>
+
+
 
     <ProgressBar
         android:id="@+id/progressbar"

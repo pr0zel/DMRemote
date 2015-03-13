@@ -39,10 +39,10 @@
     	        android:layout_column="1"
     	        android:layout_gravity="left|top"
     	        android:layout_row="1"
-    	        android:horizontalSpacing="20px"
+    	        android:horizontalSpacing="20dp"
     	        android:numColumns="auto_fit"
     	        android:scrollbars="none"
-    	        android:verticalSpacing="20px" >
+    	        android:verticalSpacing="20dp" >
     	    </GridView>
     	</GridLayout>
 

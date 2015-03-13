@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <lint>
+    <issue id="HardcodedText">
+        <ignore path="res/layout/list_item.xml" />
+    </issue>
     <issue id="InflateParams" severity="ignore" />
     <issue id="ServiceCast" severity="ignore" />
     <issue id="ShowToast" severity="ignore" />
